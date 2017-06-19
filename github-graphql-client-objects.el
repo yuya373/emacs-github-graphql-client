@@ -33,10 +33,10 @@
 
 ;; https://developer.github.com/v4/reference/object/pageinfo/
 (defclass ggc:page-info ()
-  ((end-cursor :initarg :end-cursor :type string)
+  ((end-cursor :initarg :end-cursor :type (or null string))
    (has-next-page :initarg :has-next-page :type boolean)
    (has-previous-page :initarg :has-previous-page :type boolean)
-   (start-cursor :initarg :start-cursor :type string)))
+   (start-cursor :initarg :start-cursor :type (or null string))))
 
 ;; TODO https://developer.github.com/v4/reference/object/user/
 (defclass ggc:user

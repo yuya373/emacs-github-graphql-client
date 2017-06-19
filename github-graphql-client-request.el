@@ -70,7 +70,7 @@
 (cl-defun github-graphql-client-request (query token &key (variables nil) success error http-error (headers nil))
   (cl-labels
       ((on-success (&key data &allow-other-keys)
-                   (if (plist-get data :error)
+                   (if (plist-get data :errors)
                        (funcall error data)
                      (funcall success data)))
        (on-error (&key error-thrown symbol-status response data &allow-other-keys)

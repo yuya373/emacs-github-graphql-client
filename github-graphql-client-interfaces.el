@@ -32,7 +32,7 @@
 
 (defclass ggc:assignable () ((assignees :initarg :assignees :type ggc:user-connection)) :abstract t)
 
-(defclass ggc:labelable () ((labels :initarg :labels :type label-connection)) :abstract t)
+(defclass ggc:labelable () ((labels :initarg :labels :type ggc:label-connection)) :abstract t)
 
 (defclass ggc:lockable () ((locked :initarg :locked :type boolean)) :abstract t)
 
@@ -116,8 +116,8 @@
    (body-html :initarg :body-html :type ggc:html)
    (created-at :initarg :created-at :type ggc:datetime)
    (created-via-email :initarg :created-via-email :type boolean)
-   (editor :initarg :editor :type ggc:actor)
-   (last-edited-at :initarg :last-edited-at :type ggc:datetime)
+   (editor :initarg :editor :type (or null ggc:actor))
+   (last-edited-at :initarg :last-edited-at :type (or null ggc:datetime))
    (published-at :initarg :published-at :type ggc:datetime)
    (viewer-did-author :initarg :viewer-did-author :type boolean))
   :abstract t)
