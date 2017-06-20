@@ -227,6 +227,13 @@
                                    )
    ))
 
+(defclass ggc:repository-owner ()
+  ((avatar-url :initarg :avatar-url :type ggc:uri)
+   (login :initarg :login :type string)
+   (repository :initarg :repository :type gcc:repository)
+   (resource-path :initarg :resource-path :type ggc:uri)
+   (url :initarg :url :type ggc:uri)))
+
 ;; https://developer.github.com/v4/reference/object/repository/
 (defclass ggc:repository
     (ggc:node ggc:project-owner ggc:subscribable ggc:starrable ggc:uniform-resource-locatable

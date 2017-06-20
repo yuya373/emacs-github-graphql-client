@@ -47,14 +47,6 @@
 
 (defclass ggc:updatable () ((viewer-can-update :initarg :viewer-can-update :type boolean)) :abstract t)
 
-(defclass ggc:repository-owner ()
-  ((avatar-url :initarg :avatar-url :type ggc:uri)
-   (login :initarg :login :type string)
-   (repository :initarg :repository :type gcc:repository)
-   (resource-path :initarg :resource-path :type ggc:uri)
-   (url :initarg :url :type ggc:uri))
-  :abstract t)
-
 (defclass ggc:uniform-resource-locatable ()
   ((resource-path :initarg :resource-path :type ggc:uri)
    (url :initarg :url :type ggc:uri))
