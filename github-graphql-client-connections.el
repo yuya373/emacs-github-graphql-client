@@ -83,8 +83,12 @@
   )
 
 ;; TODO https://developer.github.com/v4/reference/object/reactionconnection/
-(defclass ggc:reaction-connection ()
-  ())
+(defclass ggc:reaction-edge (ggc:edge) ())
+(defclass ggc:reaction-connection (ggc:connection)
+  ((edges :initarg :edges :type list ;; ggc:reaction-edge
+          )
+   (nodes :initarg :nodes :type list ;; ggc:reaction
+          )))
 
 (defclass ggc:commit-comment-connection (ggc:connection)
   ((edges :initarg :edges :type list ;;ggc:commit-comment-edge

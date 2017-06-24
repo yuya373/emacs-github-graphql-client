@@ -259,7 +259,11 @@
   ((name :initarg :name :type string)
    (related-topics :initarg :related-topics :type list)))
 
-
+(defclass ggc:reaction (ggc:node)
+  ((content :initarg :content :type ggc:reaction-content)
+   (created-at :initarg :created-at :type ggc:datetime)
+   (user :initarg :user :type ggc:user)
+   ))
 
 (provide 'github-graphql-client-objects)
 ;;; github-graphql-client-objects.el ends here
