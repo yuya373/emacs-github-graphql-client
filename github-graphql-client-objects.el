@@ -38,6 +38,13 @@
    (has-previous-page :initarg :has-previous-page :type boolean)
    (start-cursor :initarg :start-cursor :type (or null string))))
 
+(defclass ggc:repository-owner ()
+  ((avatar-url :initarg :avatar-url :type ggc:uri)
+   (login :initarg :login :type string)
+   (repository :initarg :repository :type gcc:repository)
+   (resource-path :initarg :resource-path :type ggc:uri)
+   (url :initarg :url :type ggc:uri)))
+
 ;; TODO https://developer.github.com/v4/reference/object/user/
 (defclass ggc:user
     (ggc:node
@@ -226,13 +233,6 @@
    (required-status-check-contexts :initarg :required-status-check-contexts :type list ;; string
                                    )
    ))
-
-(defclass ggc:repository-owner ()
-  ((avatar-url :initarg :avatar-url :type ggc:uri)
-   (login :initarg :login :type string)
-   (repository :initarg :repository :type gcc:repository)
-   (resource-path :initarg :resource-path :type ggc:uri)
-   (url :initarg :url :type ggc:uri)))
 
 ;; https://developer.github.com/v4/reference/object/repository/
 (defclass ggc:repository
